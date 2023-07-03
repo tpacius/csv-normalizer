@@ -1,0 +1,58 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.example:normalizer >-----------------------
+[INFO] Building normalizer 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- exec:3.1.0:java (default-cli) @ normalizer ---
+[WARNING] 
+com.opencsv.exceptions.CsvBadConverterException: There was a problem instantiating the custom converter org.example.App.ZonedDateTimeConverter.
+    at com.opencsv.bean.AbstractMappingStrategy.instantiateCustomConverter (AbstractMappingStrategy.java:586)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.registerCustomBinding (HeaderColumnNameMappingStrategy.java:71)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.loadAnnotatedFieldMap (HeaderColumnNameMappingStrategy.java:193)
+    at com.opencsv.bean.AbstractMappingStrategy.loadFieldMap (AbstractMappingStrategy.java:445)
+    at com.opencsv.bean.AbstractMappingStrategy.setType (AbstractMappingStrategy.java:363)
+    at com.opencsv.bean.util.OpencsvUtils.determineMappingStrategy (OpencsvUtils.java:79)
+    at com.opencsv.bean.CsvToBeanBuilder.build (CsvToBeanBuilder.java:234)
+    at org.example.App.main (App.java:31)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:279)
+    at java.lang.Thread.run (Thread.java:1623)
+Caused by: java.lang.InstantiationException: org.example.App$ZonedDateTimeConverter
+    at java.lang.Class.newInstance (Class.java:679)
+    at com.opencsv.bean.AbstractMappingStrategy.instantiateCustomConverter (AbstractMappingStrategy.java:580)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.registerCustomBinding (HeaderColumnNameMappingStrategy.java:71)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.loadAnnotatedFieldMap (HeaderColumnNameMappingStrategy.java:193)
+    at com.opencsv.bean.AbstractMappingStrategy.loadFieldMap (AbstractMappingStrategy.java:445)
+    at com.opencsv.bean.AbstractMappingStrategy.setType (AbstractMappingStrategy.java:363)
+    at com.opencsv.bean.util.OpencsvUtils.determineMappingStrategy (OpencsvUtils.java:79)
+    at com.opencsv.bean.CsvToBeanBuilder.build (CsvToBeanBuilder.java:234)
+    at org.example.App.main (App.java:31)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:279)
+    at java.lang.Thread.run (Thread.java:1623)
+Caused by: java.lang.NoSuchMethodException: org.example.App$ZonedDateTimeConverter.<init>()
+    at java.lang.Class.getConstructor0 (Class.java:3685)
+    at java.lang.Class.newInstance (Class.java:666)
+    at com.opencsv.bean.AbstractMappingStrategy.instantiateCustomConverter (AbstractMappingStrategy.java:580)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.registerCustomBinding (HeaderColumnNameMappingStrategy.java:71)
+    at com.opencsv.bean.HeaderColumnNameMappingStrategy.loadAnnotatedFieldMap (HeaderColumnNameMappingStrategy.java:193)
+    at com.opencsv.bean.AbstractMappingStrategy.loadFieldMap (AbstractMappingStrategy.java:445)
+    at com.opencsv.bean.AbstractMappingStrategy.setType (AbstractMappingStrategy.java:363)
+    at com.opencsv.bean.util.OpencsvUtils.determineMappingStrategy (OpencsvUtils.java:79)
+    at com.opencsv.bean.CsvToBeanBuilder.build (CsvToBeanBuilder.java:234)
+    at org.example.App.main (App.java:31)
+    at org.codehaus.mojo.exec.ExecJavaMojo$1.run (ExecJavaMojo.java:279)
+    at java.lang.Thread.run (Thread.java:1623)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.317 s
+[INFO] Finished at: 2023-07-03T12:11:28-04:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:3.1.0:java (default-cli) on project normalizer: An exception occurred while executing the Java class. There was a problem instantiating the custom converter org.example.App.ZonedDateTimeConverter.: org.example.App$ZonedDateTimeConverter: org.example.App$ZonedDateTimeConverter.<init>() -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

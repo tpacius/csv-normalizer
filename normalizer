@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#./mvnw --quiet exec:java -Dexec.mainClass="org.example.App" -Dexec.args="$*"
+./mvnw exec:java -Dexec.mainClass="org.example.App" -Dexec.args="$*"
